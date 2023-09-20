@@ -1,0 +1,24 @@
+body {
+    background: linear-gradient(to top, #FF4500, #FF6347, #FFF8DC);
+    margin: 0;
+    /*height: 100vh;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.boton-pokemon {
+    background-color: #FF4500; /* Color de fondo similar al de Arcanine */
+    border: none;
+    color: #FFF; /* Texto blanco para contrastar con el fondo */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer;
+    border-radius: 8px; /* Esquinas redondeadas */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.boton-pokemon:hover {
+    background-color: #FF6347; /* Cambio de color al pasar el mouse sobre el botón */
+}
