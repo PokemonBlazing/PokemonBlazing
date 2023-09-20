@@ -9,6 +9,7 @@ const app = express();
 
 // REQUERIMIENTO ARCHIVOS EXTERNOS
 const MainRoutes = require('./routes/main-routes');
+const encounter = require('./routes/encounter.routes');
 
 // SETTINGS
 
@@ -33,6 +34,7 @@ app.use(cookieParser('mysecretkey_pokemon'))
 // RUTAS
 
 app.use(MainRoutes);
+app.use(encounter);
 
 // INICIO SERVIDOR
 
