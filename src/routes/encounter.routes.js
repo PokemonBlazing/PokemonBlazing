@@ -5,7 +5,7 @@ const encounter = require('../controllers/encounters');
 
 router.get('/encounter',(req,res)=> {
     P = encounter.generarPokemon();
-    res.send(P);
+    res.render("firstEvent");
 });
 
 module.exports = router;
