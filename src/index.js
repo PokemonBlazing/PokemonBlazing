@@ -8,12 +8,13 @@ require('ejs');
 const app = express();
 
 // REQUERIMIENTO ARCHIVOS EXTERNOS
-const MainRoutes = require('./routes/main-routes');
+const UserRoutes = require('./routes/user.routes');
+const MainRoutes = require('./routes/main.routes');
 const encounter = require('./routes/encounter.routes');
 
 // SETTINGS
 
-app.set('viewengine', 'ejs');
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 
 // MIDDLEWARES
@@ -33,6 +34,7 @@ app.use(cookieParser('mysecretkey_pokemon'))
 
 // RUTAS
 
+app.use(UserRoutes);
 app.use(MainRoutes);
 app.use(encounter);
 

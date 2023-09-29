@@ -1,5 +1,5 @@
 .container{
-    background: url('/src/front/public/images/pokemons.png');
+    background: url('../images/pokemons.png');
     background-repeat: no-repeat;
     background-size: cover;
 }

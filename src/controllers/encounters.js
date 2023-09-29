@@ -1,4 +1,4 @@
-const Pokedex = require("pokedex-promise-v2");
+/* const Pokedex = require("pokedex-promise-v2");
 const P = new Pokedex()
 
 function getRandomInt(max) {
@@ -34,4 +34,4 @@ const bulbasaur = {
         
 }
 module.exports = 
-{generarPokemon}
+{generarPokemon} */
