@@ -38,6 +38,10 @@ app.use(UserRoutes);
 app.use(MainRoutes);
 app.use(encounter);
 
+app.use((req, res) => {
+    res.redirect('/');
+})
+
 // INICIO SERVIDOR
 
 app.listen(3000);
