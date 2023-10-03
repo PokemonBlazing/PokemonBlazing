@@ -1,60 +1,35 @@
 //import Pokedex from "pokedex-promise-v2";
 
-const { response } = require("express");
+const { res } = require("express");
 const fetch = require("node-fetch");
 
 //const P = new Pokedex();
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-}
+};
 function generarPokemon()
 {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomInt(151)}`)
-    .then(response => response.json())
-    .then(data => data);
+    fetch(`https://pokeapi.co/api/v2/pokemon/1`)
+    .then(res => res.json())
+    .then(data => guardarPokemon(data))
+};
+function guardarPokemon(poke){
+    const nombre = poke.name;
+    const move1 = {
+        name: "takle",
+        power: 45,
+        pp: 25,
+        accuracy: 100
+    };
+    const move2 = {
+        name: "vine whip",
+        power: 45,
+        pp: 25,
+        accuracy: 100
+    };
+    const HP = 45;
+    const deff = 49;
+    const atk = 49;
 }
-/*const allPokemon = [
-    {
-        id: 1,
-        name: bulbasaur,
-        type: plant,
-        attaks:
-            [
-                placaje = {
-                    potencia: 40,
-                    PP: 35,
-                    att_type: normal,
-                },
-                latigo_cepa = {
-                    potencia: 45,
-                    PP: 25,
-                    att_type: plant,
-                },        
-            ],
-        deffense: 20,
-        velocity: 15,  
-        frontimg:lkkk,
-    },
-    {
-        id: 4,
-        name: charmander,
-        type: fire,
-        attaks:
-            [
-                placaje = {
-                    potencia: 40,
-                    PP: 35,
-                    att_type: normal,
-                },
-                ascuas = {
-                    potencia: 45,
-                    PP: 25,
-                    att_type: fire,
-                },        
-            ],
-        deffense: 20,
-        velocity: 15,
-    }
-]*/
 module.exports = 
 {generarPokemon} 
