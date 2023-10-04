@@ -4,7 +4,7 @@ const router = Router()
 const encounter = require('../controllers/encounters');
 
 router.get('/encounter',(req,res)=> {
-    encounter.generarPokemon();
+    P = encounter.generarPokemon();
     res.render("firstEvent");
 });
 router.get('/encounter/encounter',(req,res)=>{

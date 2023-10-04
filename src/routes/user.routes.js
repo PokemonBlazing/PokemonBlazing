@@ -27,7 +27,7 @@ router.post('/register', async (req, res) => {
     const datosForm = req.body;
     try {
         await CreateUser(datosForm);
-        res.send('nashe');
+        res.redirect('/login');
     } catch (error) {
         res.redirect('/register');
     }

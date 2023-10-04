@@ -1,11 +1,11 @@
-body {
-    background: linear-gradient(to top, #FF4500, #FF6347, #FFF8DC);
+ body {
     margin: 0;
-    /*height: 100vh;*/
+    /* background: linear-gradient(to top, #FF4500, #FF6347, #FFF8DC);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    */
 }
 
 .boton-pokemon {
@@ -17,6 +17,8 @@ body {
     cursor: pointer;
     border-radius: 8px; /* Esquinas redondeadas */
     font-weight: bold; /* Texto en negrita */
+    width: 47%;
+    bottom: 0;
 }
 
 .boton-pokemon:hover {
