@@ -4,11 +4,12 @@ const router = Router()
 const encounter = require('../controllers/encounters');
 
 router.get('/encounter',(req,res)=> {
-    P = encounter.generarPokemon();
     res.render("firstEvent");
 });
-router.get('/encounter/encounter',(req,res)=>{
-    encounter.ataque1(poke1,poke3);
+router.post('/encounter/ataque1', async (req,res)=>{
+    P = await encounter.generarPokemon();
+    console.log(P);
+    await encounter.ataque1(P.poke1,P.poke3);
     console.log(poke3.HP);
 })
 

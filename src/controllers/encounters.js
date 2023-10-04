@@ -65,7 +65,7 @@ function generarPokemon(){
 }
 
 function ataque1(p1,p2) {
-    //Daño planta -> agua (Ineficiente)
+    //Daño planta -> agua (ineficaz)
     if(p1.type==="grass" && p2.type==="water"){
         p2.HP = (p2.HP * p2.deff)/5 - ((p1.move1.power * p1.atk)/5)/0.5
     }
