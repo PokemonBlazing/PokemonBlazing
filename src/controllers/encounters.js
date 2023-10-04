@@ -3,33 +3,73 @@
 const { res } = require("express");
 const fetch = require("node-fetch");
 
-//const P = new Pokedex();
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-};
-function generarPokemon()
-{
-    fetch(`https://pokeapi.co/api/v2/pokemon/1`)
-    .then(res => res.json())
-    .then(data => guardarPokemon(data))
-};
-function guardarPokemon(poke){
-    const nombre = poke.name;
-    const move1 = {
-        name: "takle",
-        power: 45,
-        pp: 25,
-        accuracy: 100
+function generarPokemon(){
+    let poke1= {
+        name: "bulbasaur",
+        type: "grass",
+        move1 : {
+            name: "tackle",
+            power: 45,
+            pp: 25,
+            accuracy: 100
+        },
+        move2 : {
+            name: "vine whip",
+            power: 45,
+            pp: 25,
+            accuracy: 100
+        },
+        HP: 45,
+        deff: 49,
+        atk:49,
     };
-    const move2 = {
-        name: "vine whip",
-        power: 45,
-        pp: 25,
-        accuracy: 100
+    let poke2= {
+        name: "charmander",
+        type: "fire",
+        move1 : {
+            name: "scratch",
+            power: 40,
+            pp: 25,
+            accuracy: 100
+        },
+        move2 : {
+            name: "ember",
+            power: 40,
+            pp: 25,
+            accuracy: 100
+        },
+        HP: 39,
+        deff: 43,
+        atk:52,
     };
-    const HP = 45;
-    const deff = 49;
-    const atk = 49;
+    let poke3= {
+        name: "squirtle",
+        type: "water",
+        move1 : {
+            name: "tackle",
+            power: 45,
+            pp: 25,
+            accuracy: 100
+        },
+        move2 : {
+            name: "water gun",
+            power: 40,
+            pp: 25,
+            accuracy: 100
+        },
+        HP: 44,
+        deff: 65,
+        atk: 48,
+    };
+    
+}
+
+function ataque1(p1,p2) {
+    //Daño planta -> agua (Ineficiente)
+    if(p1.type==="grass" && p2.type==="water"){
+        p2.HP = (p2.HP * p2.deff)/5 - ((p1.move1.power * p1.atk)/5)/0.5
+    }
+
 }
 module.exports = 
-{generarPokemon} 
+{generarPokemon, ataque1} 
