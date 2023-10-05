@@ -5,7 +5,10 @@ const encounter = require('../controllers/encounters');
 
 //Encuentro charmander
 router.get('/encounter',(req,res)=> {
-    res.render("firstEvent");
+    let P = encounter.pokemon;
+    PokemonP1 = P[0];
+    PokemonP2 = P[2];
+    res.render("firstEvent", {PokemonP1, PokemonP2});;
 });
 router.post('/encounter1/ataque1', async (req,res)=>{
     const P = encounter.pokemon;
@@ -18,7 +21,7 @@ router.post('/encounter1/ataque1', async (req,res)=>{
     }
     if(P[0].HP<=0){
         encounter.curar(P[0]);
-        res.redirect("/");
+        res.redirect("/lose");
     }
     if(P[2].HP<=0){
         res.redirect("/healing");
@@ -35,7 +38,7 @@ router.post('/encounter1/ataque2', async (req,res)=>{
     }
     if(P[0].HP<=0){
         encounter.curar(P[0]);
-        res.redirect("/");
+        res.redirect("/lose");
     }
     if(P[2].HP<=0){
         res.redirect("/healing");
@@ -44,7 +47,10 @@ router.post('/encounter1/ataque2', async (req,res)=>{
 
 //Encuentro Squirtle
 router.get('/encounter2',(req,res)=> {
-    res.render("secondEvent");
+    let P = encounter.pokemon;
+    PokemonP1 = P[0];
+    PokemonP2 = P[1];
+    res.render("secondEvent", {PokemonP1, PokemonP2});
 });
 router.post('/encounter2/ataque1', async (req,res)=>{
     const P = encounter.pokemon;
@@ -57,7 +63,7 @@ router.post('/encounter2/ataque1', async (req,res)=>{
     }
     if(P[0].HP<=0){
         encounter.curar(P[0]);
-        res.redirect("/");
+        res.redirect("/lose");
     }
     if(P[1].HP<=0){
         res.redirect("/healing");
@@ -75,7 +81,7 @@ router.post('/encounter2/ataque2', async (req,res)=>{
     }
     if(P[0].HP<=0){
         encounter.curar(P[0]);
-        res.redirect("/");
+        res.redirect("/lose");
     }
     if(P[1].HP<=0){
         res.redirect("/win");
@@ -88,6 +94,12 @@ router.get("/healing", (req,res)=>{
     encounter.curar(P[0]);
     console.log(P[0].HP);
     res.render("healing");
+})
+
+router.get('/lose', (req, res) => {
+    let P = encounter.pokemon;
+    PokemonP1 = P[0];
+    res.render('message', {PokemonP1});
 })
 
 module.exports = router;

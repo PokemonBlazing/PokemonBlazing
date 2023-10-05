@@ -15,11 +15,19 @@
         <header class="header w-full relative h-[60px] mt-0 flex flex-row items-center justify-center">
 
             <nav>
+                <%if(!user){%>
                 <form action="/login" class="flex flex-row items-center justify-center">
         
                     <button type="submit" class="absolute w-40 bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg px-4 py-3 right-0 top-0">Iniciar Sesión</button>
 
                 </form>
+                <%}else{%>
+                <form action="/cerrar-sesion" class="flex flex-row items-center justify-center" method="post">
+        
+                    <button type="submit" class="absolute w-40 bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg px-4 py-3 right-0 top-0">Cerrar sesion</button>
+    
+                </form>
+                <%}%>
             </nav>
         </header>
 

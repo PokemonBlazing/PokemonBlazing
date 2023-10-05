@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Curación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/healCenter.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
         <div class="subtitulo" id="subtitulo1">Curando pokemon...</div>
         <div class="subtitulo" id="subtitulo2">Espere porfavor...</div>
         <div class="contador subtitulo" id="contador">7...</div>
-        <button class="continuar-btn" id="continuar-btn" style="display:none;">Continuar</button>
+        <a href="/encounter2" class="no-underline"><button class="continuar-btn no-underline" id="continuar-btn" style="display:none;">Continuar</button></a>
     </div>
     <script>document.addEventListener('DOMContentLoaded', function() {
         var contadorElement = document.getElementById('contador');

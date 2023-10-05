@@ -19,7 +19,7 @@
                     <img class="object-cover" src="../images/bulbasaur.png">
                     <div class="pokemon1 relative w-40 h-16 bg-slate-300 outline">
                         <p class="pt-2 pl-2">Bulbasaur</p>
-                        <p class="pl-2">HP: 40</p>
+                        <p class="pl-2">HP: <%= PokemonP1.HP %></p>
                     </div>
                 </div>
                 <div class="pokemon2 fixed top-1/4 right-1/4">
@@ -27,17 +27,17 @@
                     <img class="object-cover" src="../images/charmander.png">
                     <div class="pokemon2 relative w-40 h-16 bg-slate-300 outline">
                         <p class="pt-2 pl-2">Charmander</p>
-                        <p class="pl-2">HP: 40</p>
+                        <p class="pl-2">HP: <%= PokemonP2.HP %></p>
                     </div>
                 </div>
             </div>
     
             <div class="movimientos-basicos flex h-[10%] bottom-0">
-                <form action="/encounter2/ataque1" method="get" class="w-full mx-3">    
-                    <button type="input" class="boton-pokemon w-full bottom-0">Ataque 1</button>
+                <form action="/encounter2/ataque1" method="post" class="w-full mx-3">    
+                    <button type="input" class="boton-pokemon w-full bottom-0"><%= PokemonP1.move1.name %></button>
                 </form>
-                <form action="/encounter2/ataque2" method="get" class="w-full mx-3">    
-                    <button type="input" class="boton-pokemon w-full bottom-0">Ataque 2</button>
+                <form action="/encounter2/ataque2" method="post" class="w-full mx-3">    
+                    <button type="input" class="boton-pokemon w-full bottom-0"><%= PokemonP1.move2.name %></button>
                 </form>
             </div>
         </div>

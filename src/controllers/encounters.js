@@ -6,16 +6,16 @@ const fetch = require("node-fetch");
   
 let pokemon  =[    
     poke1= {
-        name: "bulbasaur",
+        name: "Bulbasaur",
         type: "grass",
         move1 : {
-            name: "tackle",
+            name: "Tackle",
             power: 45,
             pp: 25,
             accuracy: 100
         },
         move2 : {
-            name: "vine whip",
+            name: "Vine whip",
             power: 45,
             pp: 25,
             accuracy: 100
@@ -26,16 +26,16 @@ let pokemon  =[
         atk:49,
     },
     poke2= {
-        name: "charmander",
+        name: "Charmander",
         type: "fire",
         move1 : {
-            name: "scratch",
+            name: "Scratch",
             power: 40,
             pp: 25,
             accuracy: 100
         },
         move2 : {
-            name: "ember",
+            name: "Ember",
             power: 40,
             pp: 25,
             accuracy: 100
@@ -45,16 +45,16 @@ let pokemon  =[
         atk:52,
     },
     poke3= {
-        name: "squirtle",
+        name: "Squirtle",
         type: "water",
         move1 : {
-            name: "tackle",
+            name: "Tackle",
             power: 45,
             pp: 25,
             accuracy: 100
         },
         move2 : {
-            name: "water gun",
+            name: "Water gun",
             power: 40,
             pp: 25,
             accuracy: 100

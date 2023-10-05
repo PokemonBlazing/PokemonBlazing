@@ -4,15 +4,18 @@ const router = Router()
 
 // LOGIN
 router.get('/login', (req, res) => {
-    res.render('login');
+    if(!req.session.user){
+        res.render('login');
+    }else{
+        res.send('ya esta logueado')
+    }
 })
 
 router.post('/login', async (req, res) => {
     const datosForm = req.body;
     try {
         req.session.user = await LoginUser(datosForm);
-        console.log(req.session.user);
-        res.send('Logueado');
+        res.redirect('/');
     } catch (error) {
         res.redirect('/login');   
     }
@@ -32,5 +35,11 @@ router.post('/register', async (req, res) => {
         res.redirect('/register');
     }
 })
+
+router.post('/cerrar-sesion', (req, res) => {
+    req.session.destroy();
+    res.render('closeSession')
+})
+
 
 module.exports = router 
