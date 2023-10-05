@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Cambiado a fondo negro */
+}
+
+.contenedor {
+    text-align: center; /* Centra el contenido */
+}
+
+
+.marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el GIF cubra todo el contenedor */
+    object-position: center; /* Centra el GIF dentro del contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Enviamos el GIF al fondo */
+}
+
+.subtitulo {
+    font-size: 24px;
+    margin-top: 20px;
+    animation: moveLetters 1s infinite alternate; /* Animación de letras moviéndose */
+    color: white;
+}
+
+@keyframes moveLetters {
+    from {
+        transform: translateX(-2px);
+    }
+    to {
+        transform: translateX(2px);
+    }
+}
+
+.contador {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.continuar-btn {
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #4caf50; /* Color del botón */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
