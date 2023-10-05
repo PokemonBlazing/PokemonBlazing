@@ -3,8 +3,9 @@
 const { res } = require("express");
 const fetch = require("node-fetch");
 
-function generarPokemon(){
-    let poke1= {
+  
+let pokemon  =[    
+    poke1= {
         name: "bulbasaur",
         type: "grass",
         move1 : {
@@ -22,8 +23,8 @@ function generarPokemon(){
         HP: 45,
         deff: 49,
         atk:49,
-    };
-    let poke2= {
+    },
+    poke2= {
         name: "charmander",
         type: "fire",
         move1 : {
@@ -41,8 +42,8 @@ function generarPokemon(){
         HP: 39,
         deff: 43,
         atk:52,
-    };
-    let poke3= {
+    },
+    poke3= {
         name: "squirtle",
         type: "water",
         move1 : {
@@ -59,17 +60,65 @@ function generarPokemon(){
         },
         HP: 44,
         deff: 65,
-        atk: 48,
-    };
-    
-}
+        atk: 48,    
+    }
+]
 
 function ataque1(p1,p2) {
-    //Daño planta -> agua (ineficaz)
+    //Daño planta -> fuego (poco eficaz)
+    if(p1.type==="grass" && p2.type==="fire"){
+        p2.HP = p2.HP - (2 * p1.move1.power * (p1.atk/p2.deff)/50+2) * 0.5
+    }
+    //Daño planta -> agua (muy eficaz)
     if(p1.type==="grass" && p2.type==="water"){
-        p2.HP = (p2.HP * p2.deff)/5 - ((p1.move1.power * p1.atk)/5)/0.5
+        p2.HP = p2.HP - (2 * p1.move1.power * (p1.atk/p2.deff)/50+2) * 1.5
+    }
+    //Daño fuego -> planta (muy eficaz)
+    if(p1.type==="fire" && p2.type==="grass"){
+        p2.HP = p2.HP - (2 * p1.move1.power * (p1.atk/p2.deff)/50+2) * 1.5
+    }
+    //Daño fuego -> agua (poco eficaz)
+    if(p1.type==="fire" && p2.type==="water"){
+        p2.HP = p2.HP - (2 * p1.move1.power * (p1.atk/p2.deff)/50+2) * 0.5
+    }
+    //Daño agua -> planta (poco eficaz)
+    if(p1.type==="water" && p2.type==="grass"){
+        p2.HP = p2.HP - (2 * p1.move1.power * (p1.atk/p2.deff)/50+2) * 0.5
+    }
+    //Daño agua -> fuego (muy eficaz)
+    if(p1.type==="water" && p2.type==="fire"){
+        p2.HP = p2.HP - (2 * p1.move1.power * (p1.atk/p2.deff)/50+2) * 1.5
     }
 
 }
+function ataque2(p1,p2) {
+    //Daño planta -> fuego (poco eficaz)
+    if(p1.type==="grass" && p2.type==="fire"){
+        p2.HP = p2.HP - (2 * p1.move2.power * (p1.atk/p2.deff)/50+2) * 0.5
+    }
+    //Daño planta -> agua (muy eficaz)
+    if(p1.type==="grass" && p2.type==="water"){
+        p2.HP = p2.HP - (2 * p1.move2.power * (p1.atk/p2.deff)/50+2) * 1.5
+    }
+    //Daño fuego -> planta (muy eficaz)
+    if(p1.type==="fire" && p2.type==="grass"){
+        p2.HP = p2.HP - (2 * p1.move2.power * (p1.atk/p2.deff)/50+2) * 1.5
+    }
+    //Daño fuego -> agua (poco eficaz)
+    if(p1.type==="fire" && p2.type==="water"){
+        p2.HP = p2.HP - (2 * p1.move2.power * (p1.atk/p2.deff)/50+2) * 0.5
+    }
+    //Daño agua -> planta (poco eficaz)
+    if(p1.type==="water" && p2.type==="grass"){
+        p2.HP = p2.HP - (2 * p1.move2.power * (p1.atk/p2.deff)/50+2) * 0.5
+    }
+    //Daño agua -> fuego (muy eficaz)
+    if(p1.type==="water" && p2.type==="fire"){
+        p2.HP = p2.HP - (2 * p1.move2.power * (p1.atk/p2.deff)/50+2) * 1.5
+    }
+}
+function curar(p1){
+    p1.HP += 45;
+}
 module.exports = 
-{generarPokemon, ataque1} 
+{pokemon, ataque1, ataque2, curar} 
