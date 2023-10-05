@@ -9,23 +9,30 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
 </head>
 <body class="overflow-hidden">
-    <section class="home border-red-500 bg-gray-200 min-h-screen min-w-full flex flex-col items-center justify-center">
+    <section class="home border-red-500 bg-gray-200 min-h-screen min-w-full flex flex-col items-center ">
         
+
+        <header class="header w-full relative h-[60px] mt-0 flex flex-row items-center justify-center">
+
+            <nav>
+                <form action="/login" class="flex flex-row items-center justify-center">
+        
+                    <button type="submit" class="absolute w-40 bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg px-4 py-3 right-0 top-0">Iniciar Sesión</button>
+
+                </form>
+            </nav>
+        </header>
+
         <div class="logo -mt-20 w-2/3">
             <img src="images/principal-logo.png" class="rounded-2xl opacity-100" alt="page img">
         </div>
-
+                
         <form action="/encounter">
         
             <button type="submit" class="w-40 block bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg px-4 py-3">Empezar</button>
 
         </form>
-        <form action="/login">
-        
-            <button type="submit" class="w-40 block bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg px-4 py-3">Iniciar Sesión</button>
 
-        </form>
-                
     </section>
 </body>
 </html>

@@ -24,3 +24,7 @@
 .boton-pokemon:hover {
     background-color: #FF6347; /* Cambio de color al pasar el mouse sobre el botón */
 }
+
+.movimientos-basicos > form > button{
+    width: full;
+}
